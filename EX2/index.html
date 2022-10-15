@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="ex1.js"></script>
+
+
+    <input type="button" onclick="updateButton(),updateForm();
+    " value="Submit" id="myButton1"></input> 
+
+    <form action="/action_page.php">
+    <input type="text" id="fname" name="fname" value=""><br>
+    </form> 
+
+
+
+
+    <p>[<a href="#" onMouseOver="highlight()" onMouseOut="return_normal()">On mouse over here bold words of the following paragraph will be highlighted</a>]</p> 
+
+    
+    <head>
+        <script>
+        function ageCalculator() {
+            var userinput = document.getElementById("DOB").value;
+            var dob = new Date(userinput);
+            if(userinput==null || userinput=='') {
+              document.getElementById("message").innerHTML = "**Choose a date please!";  
+              return false; 
+            } else {
+            
+            //calculate month difference from current date in time
+            var month_diff = Date.now() - dob.getTime();
+            
+            //convert the calculated difference in date format
+            var age_dt = new Date(month_diff); 
+            
+            //extract year from date    
+            var year = age_dt.getUTCFullYear();
+            
+            //now calculate the age of the user
+            var age = Math.abs(year - 1970);
+            
+            //display the calculated age
+            return document.getElementById("result").innerHTML =  
+                     "Age is: " + age + " years. ";
+            }
+        }
+        </script>
+        </head>
+
+    <p><strong>Ex2_5</p>
+        <!-- Choose a date and enter in input field -->
+        <b> Enter Date of Birth: <input type=date id = DOB> </b>
+        <span id = "message" style="color:red"> </span> <br><br>  
+        
+        <!-- Choose a date and enter in input field -->
+        <button type="submit" onclick = "ageCalculator()"> Calculate age </button> <br><br>
+        <h3 style="color:32A80F" id="result"></h3> 
+
+
+        <p><strong>Ex2_6</p>
+            <!-- Resize the window (here output panel) and see the result !-->
+            <body onload="getSize()" onresize="getSize()">
+            <div id="wh"> 
+            <!-- Place height and width size here! --> 
+            </div>
+    </body>
+</html>
